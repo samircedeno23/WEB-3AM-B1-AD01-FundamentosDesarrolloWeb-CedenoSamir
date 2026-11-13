@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Práctica académica: registro y consulta de solicitudes de mantenimiento automotriz.">
+  <title>Taller Mecánico | Solicitudes de mantenimiento</title>
+  <link rel="stylesheet" href="lib/bootstrap.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.css">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <header class="barra-superior sticky-top">
+    <nav class="navbar navbar-expand-lg container" aria-label="Navegación principal">
+      <a class="navbar-brand nombre-taller" href="#inicio">TALLER <span>MECÁNICO</span><small>Mantenimiento automotriz</small></a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menuPrincipal" aria-controls="menuPrincipal" aria-expanded="false" aria-label="Abrir navegación">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="menuPrincipal">
+        <ul class="navbar-nav ms-auto align-items-lg-center">
+          <li class="nav-item"><a class="nav-link" href="#inicio">Inicio</a></li>
+          <li class="nav-item"><a class="nav-link" href="#nosotros">Nosotros</a></li>
+          <li class="nav-item"><a class="nav-link" href="#servicios">Servicios</a></li>
+          <li class="nav-item"><a class="nav-link" href="#solicitud" id="enlaceSolicitar">Solicitar mantenimiento</a></li>
+          <li class="nav-item d-none" id="menuPanel"><a class="nav-link" href="#panel">Mi cuenta</a></li>
+          <li class="nav-item d-none" id="menuAdmin"><a class="nav-link" href="#administracion">Administración</a></li>
+          <li class="nav-item" id="menuIngresar"><a class="btn btn-rojo btn-sm ms-lg-3" href="#acceso">Ingresar</a></li>
+          <li class="nav-item d-none" id="menuSalir"><button id="botonSalir" class="btn btn-outline-dark btn-sm ms-lg-3" type="button">Cerrar sesión</button></li>
+        </ul>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <section id="inicio" class="portada">
+      <div class="container">
+        <div class="row g-0 align-items-center">
+          <div class="col-lg-6 portada-texto">
+            <p class="sobrelinea">SERVICIO AUTOMOTRIZ</p>
+            <h1>Un mantenimiento a tiempo hace la diferencia.</h1>
+            <p class="portada-descripcion">Consulta los servicios del taller y registra una solicitud para la revisión de tu vehículo.</p>
+            <div class="d-flex gap-2 flex-wrap">
+              <a id="botonHero" class="btn btn-rojo" href="#acceso">Solicitar mantenimiento</a>
+              <a class="btn btn-outline-dark" href="#servicios">Ver servicios</a>
+            </div>
+          </div>
+          <div class="col-lg-6">
+            <div class="portada-foto" role="img" aria-label="Persona revisando el motor de un automóvil"></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="nosotros" class="bloque container">
+      <div class="row g-4">
+        <div class="col-md-4">
+          <p class="sobrelinea">SOBRE EL SERVICIO</p>
+          <h2>Revisión y cuidado de tu vehículo</h2>
+        </div>
+        <div class="col-md-8 columna-texto">
+          <p>Esta página permite solicitar trabajos de mantenimiento y consultar el estado de cada solicitud. El cliente puede hacer seguimiento de sus registros y el encargado del taller puede administrar las atenciones.</p>
+          <p class="mb-0">Es un sistema de práctica desarrollado para la materia de Programación Web 1.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="servicios" class="bloque fondo-claro">
+      <div class="container">
+        <p class="sobrelinea">SERVICIOS</p>
+        <h2 class="mb-4">Trabajos de mantenimiento</h2>
+        <div class="row gx-md-5">
+          <div class="col-md-6"><div class="servicio-item"><h3>Cambio de aceite</h3><p>Reemplazo de aceite y revisión del filtro del motor.</p></div></div>
+          <div class="col-md-6"><div class="servicio-item"><h3>Revisión de frenos</h3><p>Inspección del estado de discos, pastillas y líquido.</p></div></div>
+          <div class="col-md-6"><div class="servicio-item"><h3>Alineación y balanceo</h3><p>Comprobación y ajuste para una conducción estable.</p></div></div>
+          <div class="col-md-6"><div class="servicio-item"><h3>Diagnóstico general</h3><p>Revisión básica de los principales componentes del vehículo.</p></div></div>
+          <div class="col-md-6"><div class="servicio-item"><h3>Revisión de batería</h3><p>Comprobación del estado y nivel de carga.</p></div></div>
+          <div class="col-md-6"><div class="servicio-item"><h3>Revisión de suspensión</h3><p>Inspección de amortiguadores y otras piezas de suspensión.</p></div></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="acceso" class="bloque container">
+      <div class="row g-5 align-items-center justify-content-between">
+        <div class="col-lg-5">
+          <p class="sobrelinea">ACCESO AL SISTEMA</p>
+          <h2>Consulta tus solicitudes</h2>
+          <p class="texto-gris">Inicia sesión para registrar mantenimientos y revisar su estado. El acceso del administrador también se realiza desde aquí.</p>
+          <p class="nota-simple">Los usuarios de demostración se encuentran en el archivo <strong>README.txt</strong> del proyecto.</p>
+        </div>
+        <div class="col-lg-5">
+          <div class="recuadro-formulario">
+            <h3 class="h5 mb-4">Iniciar sesión</h3>
+            <form id="formLogin" novalidate>
+              <div class="mb-3"><label class="form-label" for="loginCorreo">Correo electrónico</label><input id="loginCorreo" class="form-control" type="email" autocomplete="username" required></div>
+              <div class="mb-4"><label class="form-label" for="loginClave">Contraseña</label><input id="loginClave" class="form-control" type="password" autocomplete="current-password" required></div>
+              <button class="btn btn-rojo w-100" type="submit">Ingresar</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="panel" class="bloque container d-none" aria-label="Mi cuenta">
+      <div class="encabezado-panel d-flex justify-content-between align-items-md-center flex-column flex-md-row gap-3">
+        <div><p class="sobrelinea">ÁREA PERSONAL</p><h2>Mi cuenta</h2><p class="texto-gris mb-0">Bienvenido, <strong id="nombreBienvenida"></strong>. Aquí puedes revisar tus datos y tus solicitudes.</p></div>
+        <a href="#solicitud" class="btn btn-rojo align-self-start" id="botonNuevaCliente">Nueva solicitud</a>
+      </div>
+      <div class="perfil-sencillo mb-4">
+        <h3 class="h5">Mi perfil</h3>
+        <div class="row g-2 mt-2">
+          <div class="col-md-3"><small>Nombre</small><div id="perfilNombre"></div></div>
+          <div class="col-md-4"><small>Correo</small><div id="perfilCorreo" class="texto-rompible"></div></div>
+          <div class="col-md-3"><small>Teléfono</small><div id="perfilTelefono"></div></div>
+          <div class="col-md-2"><small>Rol</small><div id="perfilRol"></div></div>
+        </div>
+      </div>
+      <div class="panel-tabla">
+        <h3 class="h5 mb-3">Mis mantenimientos</h3>
+        <div class="table-responsive"><table class="table align-middle" id="tablaPropias">
+          <thead><tr><th>Solicitud</th><th>Vehículo</th><th>Servicio</th><th>Fecha / hora</th><th>Estado</th></tr></thead>
+          <tbody></tbody>
+        </table></div>
+        <p id="sinPropias" class="texto-gris d-none">Todavía no tienes solicitudes registradas.</p>
+      </div>
+    </section>
+
+    <section id="solicitud" class="bloque fondo-claro d-none" aria-label="Solicitud de mantenimiento">
+      <div class="container">
+        <p class="sobrelinea">REGISTRO DE MANTENIMIENTOS</p>
+        <h2 id="tituloFormulario">Nueva solicitud</h2>
+        <p class="texto-gris mb-4">Completa la información del vehículo. Atendemos de lunes a sábado, de 08:00 a 17:00.</p>
+        <form id="formSolicitud" class="recuadro-formulario formulario-grande" novalidate>
+          <h3 class="titulo-grupo">Datos del cliente</h3>
+          <div class="row g-3">
+            <div class="col-12 d-none" id="grupoSeleccionUsuario"><label class="form-label" for="usuarioSolicitud">Solicitud para</label><select id="usuarioSolicitud" class="form-select"></select></div>
+            <div class="col-md-4"><label class="form-label" for="clienteNombre">Nombre y apellido *</label><input id="clienteNombre" class="form-control" type="text" maxlength="70" required></div>
+            <div class="col-md-4"><label class="form-label" for="clienteCorreo">Correo *</label><input id="clienteCorreo" class="form-control" type="email" maxlength="90" required></div>
+            <div class="col-md-4"><label class="form-label" for="clienteTelefono">Teléfono *</label><input id="clienteTelefono" class="form-control" type="tel" maxlength="10" placeholder="09XXXXXXXX" required></div>
+          </div>
+
+          <h3 class="titulo-grupo">Datos del vehículo</h3>
+          <div class="row g-3">
+            <div class="col-md-3"><label class="form-label" for="vehiculoPlaca">Placa *</label><input id="vehiculoPlaca" class="form-control" type="text" maxlength="8" placeholder="ABC-1234" required></div>
+            <div class="col-md-3"><label class="form-label" for="vehiculoMarca">Marca *</label><input id="vehiculoMarca" class="form-control" type="text" maxlength="40" required></div>
+            <div class="col-md-3"><label class="form-label" for="vehiculoModelo">Modelo *</label><input id="vehiculoModelo" class="form-control" type="text" maxlength="40" required></div>
+            <div class="col-md-3"><label class="form-label" for="vehiculoAnio">Año *</label><input id="vehiculoAnio" class="form-control" type="number" min="1980" required></div>
+            <div class="col-md-4"><label class="form-label" for="vehiculoKm">Kilometraje *</label><input id="vehiculoKm" class="form-control" type="number" min="0" max="1000000" step="1" required></div>
+            <div class="col-md-4"><label class="form-label" for="tipoServicio">Servicio *</label><select id="tipoServicio" class="form-select" required><option value="">Seleccione...</option><option value="Cambio de aceite">Cambio de aceite</option><option value="Revisión de frenos">Revisión de frenos</option><option value="Alineación y balanceo">Alineación y balanceo</option><option value="Diagnóstico general">Diagnóstico general</option><option value="Revisión de batería">Revisión de batería</option><option value="Revisión de suspensión">Revisión de suspensión</option></select></div>
+            <div class="col-md-2"><label class="form-label" for="fechaSolicitud">Fecha *</label><input id="fechaSolicitud" class="form-control" type="date" required></div>
+            <div class="col-md-2"><label class="form-label" for="horaSolicitud">Hora *</label><input id="horaSolicitud" class="form-control" type="time" min="08:00" max="17:00" required></div>
+          </div>
+
+          <h3 class="titulo-grupo">Detalles adicionales</h3>
+          <fieldset class="mb-3">
+            <legend class="form-label fs-6">Prioridad *</legend>
+            <div class="form-check form-check-inline"><input class="form-check-input" type="radio" name="prioridad" id="prioridadNormal" value="Normal" checked><label class="form-check-label" for="prioridadNormal">Normal</label></div>
+            <div class="form-check form-check-inline"><input class="form-check-input" type="radio" name="prioridad" id="prioridadUrgente" value="Urgente"><label class="form-check-label" for="prioridadUrgente">Urgente</label></div>
+          </fieldset>
+          <div class="form-check mb-3"><input id="revisionExtra" class="form-check-input" type="checkbox"><label class="form-check-label" for="revisionExtra">Solicitar una revisión general adicional</label></div>
+          <div class="mb-3"><label class="form-label" for="observaciones">Observaciones</label><textarea id="observaciones" class="form-control" rows="3" maxlength="400" placeholder="Describe cualquier problema del vehículo (opcional)"></textarea></div>
+          <div class="form-check mb-4"><input id="confirmacionDatos" class="form-check-input" type="checkbox" required><label class="form-check-label" for="confirmacionDatos">Confirmo que los datos ingresados son correctos. *</label></div>
+          <div class="d-flex gap-2 flex-wrap"><button id="botonGuardar" type="submit" class="btn btn-rojo">Guardar solicitud</button><button id="botonCancelarEdicion" class="btn btn-outline-secondary d-none" type="button">Cancelar edición</button></div>
+          <p class="nota-formulario mt-3 mb-0">* Campos obligatorios. Este portal es una práctica académica; no programa citas reales.</p>
+        </form>
+      </div>
+    </section>
+
+    <section id="administracion" class="bloque container d-none" aria-label="Administración">
+      <div class="encabezado-panel d-flex justify-content-between align-items-md-center flex-column flex-md-row gap-3">
+        <div><p class="sobrelinea">GESTIÓN DEL TALLER</p><h2>Solicitudes registradas</h2><p class="texto-gris mb-0">Desde aquí se administran los mantenimientos de todos los clientes.</p></div>
+        <a href="#solicitud" class="btn btn-rojo align-self-start" id="botonNuevaAdmin">Agregar solicitud</a>
+      </div>
+      <div class="panel-tabla">
+        <div class="row mb-3 g-2">
+          <div class="col-md-7"><label class="form-label" for="buscarSolicitud">Buscar por nombre, placa o número de solicitud</label><input id="buscarSolicitud" class="form-control" type="search" placeholder="Buscar..."></div>
+          <div class="col-md-5"><label class="form-label" for="filtrarEstado">Estado</label><select id="filtrarEstado" class="form-select"><option value="">Todos</option><option>Pendiente</option><option>En revisión</option><option>En proceso</option><option>Finalizado</option><option>Cancelado</option></select></div>
+        </div>
+        <div class="table-responsive"><table class="table align-middle" id="tablaAdmin">
+          <thead><tr><th>Solicitud</th><th>Cliente</th><th>Vehículo</th><th>Servicio</th><th>Fecha / hora</th><th>Estado</th><th>Acciones</th></tr></thead>
+          <tbody></tbody>
+        </table></div>
+        <p id="sinAdmin" class="texto-gris d-none">No se encontraron solicitudes.</p>
+      </div>
+    </section>
+  </main>
+
+  <footer class="pie-pagina">
+    <div class="container d-flex flex-column flex-md-row justify-content-between gap-2">
+      <span><strong>Taller Mecánico</strong> · Mantenimiento automotriz</span>
+      <span>Programación Web 1 · <span id="anioActual"></span></span>
+    </div>
+    <div class="container mt-2"><small class="credito-foto">Fotografía ilustrativa: Nenad Stojković · <a href="https://creativecommons.org/licenses/by/2.0/" target="_blank" rel="noopener noreferrer">CC BY 2.0</a></small></div>
+  </footer>
+  <script src="lib/bootstrap.bundle.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.all.min.js"></script>
+  <script src="js/script.js"></script>
+</body>
+</html>

@@ -1,0 +1,10 @@
+REGISTRO DE APOYO CON INTELIGENCIA ARTIFICIAL
+============================================
+
+Herramienta: ChatGPT.
+Se utilizó para interpretar la consigna, proponer una presentación
+visual sencilla, preparar un borrador de la implementación, revisar
+las validaciones de JavaScript y comprobar casos de prueba.
+
+Las funciones utilizadas se pueden estudiar y explicar a partir de
+js/script.js y de las notas incluidas en README.txt.

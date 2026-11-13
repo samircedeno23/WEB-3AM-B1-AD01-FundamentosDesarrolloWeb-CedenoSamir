@@ -1,0 +1,84 @@
+/* Estilos propios del taller. Bootstrap se usa para columnas, tablas y formularios. */
+:root { --rojo: #a33e35; --rojo-oscuro: #87332c; --texto: #252629; --gris: #606268; --fondo: #f6f5f2; --borde: #deddd8; }
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; scroll-padding-top: 85px; }
+body { font-family: Arial, Helvetica, sans-serif; color: var(--texto); background: white; line-height: 1.6; }
+section { scroll-margin-top: 80px; }
+h1,h2,h3,h4 { line-height: 1.19; font-weight: 700; }
+h2 { font-size: clamp(1.6rem, 2.7vw, 2.2rem); letter-spacing: -.6px; }
+.barra-superior { background: #fff; border-bottom: 1px solid #e8e7e3; }
+.barra-superior .navbar { min-height: 79px; }
+.nombre-taller { font-size: 1.07rem; font-weight: 800; letter-spacing: .7px; line-height: 1.05; }
+.nombre-taller span { color: var(--rojo); }
+.nombre-taller small { color: #7b7d80; letter-spacing: .65px; font-size: .62rem; font-weight: 500; display: block; margin-top: 5px; }
+.navbar .nav-link { font-size: .89rem; color: #3f4145; padding: .7rem .68rem !important; }
+.navbar .nav-link:hover { color: var(--rojo); }
+.btn { border-radius: 3px; padding: .7rem 1.1rem; font-size: .91rem; font-weight: 600; }
+.btn-sm { padding: .48rem .9rem; font-size: .86rem; }
+.btn-rojo { background: var(--rojo); color: white; border-color: var(--rojo); }
+.btn-rojo:hover,.btn-rojo:focus { background: var(--rojo-oscuro); border-color: var(--rojo-oscuro); color: white; }
+.btn-outline-dark { color: #252629; border-color: #76797c; }
+.portada { background: linear-gradient(115deg,#f8f7f3,#eeece6); border-bottom: 1px solid var(--borde); }
+.portada-texto { padding: 6.2rem 3.2rem 6.2rem 0; }
+.sobrelinea { color: var(--rojo); font-size: .73rem; font-weight: 700; letter-spacing: 1.5px; margin: 0 0 14px; }
+.portada h1 { font-size: clamp(2.15rem,4.25vw,3.6rem); line-height: 1.1; letter-spacing: -1.6px; max-width: 660px; margin-bottom: 24px; }
+.portada-descripcion { color: #54565b; max-width: 480px; font-size: 1.06rem; margin-bottom: 28px; }
+.portada-foto { height: 440px; background-color: #353735; background-image: linear-gradient(0deg,rgba(20,20,20,.08),rgba(20,20,20,.08)),url('https://upload.wikimedia.org/wikipedia/commons/thumb/d/d7/Mechanic_works_on_car_engine_performing_routine_maintenance_and_inspections_on_vehicle_parts.jpg/960px-Mechanic_works_on_car_engine_performing_routine_maintenance_and_inspections_on_vehicle_parts.jpg'); background-size: cover; background-position: center center; }
+.bloque { padding-top: 75px; padding-bottom: 75px; }
+.columna-texto { max-width: 720px; color: #55575b; font-size: 1.03rem; }
+.fondo-claro { background: var(--fondo); border-top: 1px solid #eceae6; border-bottom: 1px solid #eceae6; }
+.servicio-item { padding: 23px 0 25px; border-top: 1px solid #cfcdc8; }
+.servicio-item h3 { font-size: 1.12rem; margin-bottom: 8px; }
+.servicio-item p { color: var(--gris); font-size: .92rem; max-width: 470px; margin: 0; }
+.texto-gris { color: var(--gris); }
+.nota-simple { border-left: 3px solid var(--rojo); font-size: .85rem; color: #65676a; padding-left: 13px; margin-top: 25px; }
+.recuadro-formulario { background: #fff; padding: 30px; border: 1px solid #deddd9; }
+.formulario-grande { max-width: 1100px; }
+.form-label { color: #383a3d; font-weight: 600; font-size: .86rem; margin-bottom: 7px; }
+.form-control,.form-select { border-radius: 3px; border-color: #cdd0d1; min-height: 42px; font-size: .95rem; }
+.form-control:focus,.form-select:focus { border-color: #a33e35; box-shadow: 0 0 0 .15rem rgba(163,62,53,.15); }
+.form-check-input:checked { background-color: var(--rojo); border-color: var(--rojo); }
+.titulo-grupo { font-size: 1.12rem; border-bottom: 1px solid #e3e1dc; padding-bottom: 12px; margin: 10px 0 20px; }
+.titulo-grupo:not(:first-child) { margin-top: 34px; }
+.nota-formulario { color: #757779; font-size: .8rem; }
+.encabezado-panel { margin-bottom: 32px; }
+.encabezado-panel h2 { margin: 0 0 8px; }
+.perfil-sencillo { background: #f6f5f2; padding: 22px 24px; border: 1px solid #e3e1db; }
+.perfil-sencillo small { display: block; font-size: .77rem; color: var(--gris); margin-bottom: 3px; }
+.perfil-sencillo .row div div { font-size: .91rem; font-weight: 600; }
+.texto-rompible { overflow-wrap: anywhere; }
+.panel-tabla { border: 1px solid #e1e1dc; padding: 26px; background: white; }
+.table { --bs-table-bg: transparent; font-size: .88rem; }
+.table thead th { white-space: nowrap; color: #47484b; font-size: .76rem; text-transform: uppercase; letter-spacing: .2px; background: #f5f4f1; padding: 12px 10px; }
+.table td { padding: 12px 10px; }
+.table .form-select { min-width: 137px; min-height: 35px; padding-top: 5px; padding-bottom: 5px; font-size: .82rem; }
+.detalle-secundario { display: block; font-size: .75rem; color: #85868a; margin-top: 2px; }
+.accion-tabla { padding: .28rem .48rem; font-size: .76rem; }
+.estado { display: inline-block; padding: 4px 8px; background: #efefef; border-radius: 2px; font-size: .78rem; white-space: nowrap; }
+.estado-pendiente { background: #f5ebd7; color: #795b27; }
+.estado-revision { background: #e3eaf5; color: #3d5c80; }
+.estado-proceso { background: #e2ebe7; color: #39634e; }
+.estado-finalizado { background: #dcebdd; color: #30643e; }
+.estado-cancelado { background: #eee2e0; color: #904a43; }
+.pie-pagina { background: #292b2d; color: #c8c8c8; padding: 28px 0; font-size: .84rem; }
+.pie-pagina strong { color: #f5f5f5; }
+@media (max-width: 991px) {
+  .barra-superior .navbar { min-height: 65px; }
+  .navbar-collapse { padding-top: 12px; padding-bottom: 12px; }
+  .navbar .nav-link { padding: .45rem 0 !important; }
+  .portada-texto { padding: 58px 0 45px; }
+  .portada-foto { height: 320px; }
+  .bloque { padding-top: 55px; padding-bottom: 55px; }
+}
+@media (max-width: 575px) {
+  .portada h1 { letter-spacing: -.7px; }
+  .portada-foto { height: 245px; }
+  .recuadro-formulario,.panel-tabla { padding: 20px 16px; }
+  .perfil-sencillo { padding: 20px 16px; }
+  .bloque { padding-top: 46px; padding-bottom: 46px; }
+}
+
+.portada-foto { position: relative; }
+.portada-foto::after { content: "REVISIÓN Y MANTENIMIENTO"; position: absolute; bottom: 22px; left: 28px; color: white; font-size: .69rem; font-weight: 700; letter-spacing: 1.2px; border-top: 1px solid rgba(255,255,255,.7); padding-top: 10px; }
+.credito-foto { color:#adb0b3; font-size:.73rem; }
+.credito-foto a { color:#d0d2d3; }
